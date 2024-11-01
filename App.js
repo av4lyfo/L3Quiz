@@ -146,16 +146,16 @@ const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center', // Center the contents
+        justifyContent: 'center',
     },
     icon: {
-        color: '#6373f1', // Set the color of the icons
+        color: '#6373f1',
     },
     image: {
-        width: '100%', // Adjust the width as needed
-        height: 300, // Adjust the height as needed
+        width: '100%',
+        height: 300,
         marginVertical: 10,
-        alignSelf: 'center', // Center the image
+        alignSelf: 'center',
     },
 });
 

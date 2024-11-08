@@ -1,5 +1,5 @@
 import react, {useState} from 'react'
-import {View, Text, TextInput, Image, StyleSheet, ScrollView, Alert, Button} from 'react-native';
+import {View, Text, TextInput, Image, StyleSheet, ScrollView, Alert, Button, TouchableOpacity} from 'react-native';
 import Icon from "react-native-vector-icons/FontAwesome6";
 import RNPickerSelect from 'react-native-picker-select';
 
@@ -48,7 +48,7 @@ const QuizApp = () => {
     };
 
 return(
-    <ScrollView style={styles.Container} scrollEventThrottle={16} overScrollMode="never">
+    <ScrollView style={styles.Container} scrollEventThrottle={5} overScrollMode="never">
         <Text></Text>
         <Text></Text>
         <View style={styles.headerContainer}>
@@ -154,7 +154,9 @@ return(
         </View>
 
         <Text></Text>
-        <Button title="Submit" onPress={handleSubmit} />
+        <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
+            <Text style={styles.submitButtonText}>Submit</Text>
+        </TouchableOpacity>
         <Text></Text>
         <Text></Text>
     </ScrollView>
@@ -167,9 +169,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#c0c8f6',
         borderRadius: 10,
         padding: 20,
-
-        shadowOffset: { width: 0, height: 5 },
-
     },
 
     header: {
@@ -183,7 +182,7 @@ const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
+        //justifyContent: 'center',
         backgroundColor:'#a1a8ef',
         borderRadius: 20,
         alignSelf: 'center',
@@ -198,7 +197,6 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 300,
         marginVertical: 10,
-        alignSelf: 'center',
         borderColor:'#a1a8ef',
         borderRadius:20
 
@@ -216,6 +214,17 @@ const styles = StyleSheet.create({
     //     padding: 10,
     //
     // }
+    submitButton: {
+        backgroundColor: '#a1a8ef',
+        paddingVertical: 15,
+        borderRadius: 20,
+        alignItems: 'center',
+    },
+    submitButtonText: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
 });
 
 

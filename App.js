@@ -116,7 +116,6 @@ return(
         <Text></Text>
         <Button title="Submit" onPress={handleSubmit} />
         <Text></Text>
-        <Text></Text>
     </ScrollView>
 );
 

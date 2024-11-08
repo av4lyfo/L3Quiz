@@ -22,7 +22,7 @@ const QuizApp = () => {
     const correctAnswers = {
         AnsQ1: 'Porsche',
         AnsQ2: 'Renault',
-        AnsQ3: 'Citoren',
+        AnsQ3: 'Citroen',
         AnsQ4: 'Bmw',
         AnsQ5: 'Ferrari',
     };
@@ -106,7 +106,7 @@ return(
         <RNPickerSelect
             onValueChange={(value) => setAnswers({ ...answers, AnsQ3: value })}
             items={[
-                { label: 'Citoren', value: 'Citoren' },
+                { label: 'Citroen', value: 'Citroen' },
                 { label: 'Lotus', value: 'Lotus' },
                 { label: 'Toyota', value: 'Toyota' }]}
             style={{

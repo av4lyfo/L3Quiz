@@ -48,7 +48,7 @@ const QuizApp = () => {
     };
 
 return(
-    <ScrollView style={styles.Container}>
+    <ScrollView style={styles.Container} scrollEventThrottle={16} overScrollMode="never">
         <Text></Text>
         <Text></Text>
         <View style={styles.headerContainer}>
@@ -57,12 +57,14 @@ return(
             <Icon name="car" size={24} style={styles.icon} />
         </View>
         <Text></Text>
+        <View /*styles={styles.UserNameContainer}*/>
         <InputBox label="User Name:" onChangeText={(text) => setUser(text)}/>
         <Text></Text>
         <Text>Hello, {user}</Text>
         <Text></Text>
+        </View>
 
-
+        <View style={styles.questionContainer}>
         <Text>Q1) What car is this?</Text>
         <Image source={require('./img/Porsche.jpg')} style={styles.image} />
         <Text>Answer:</Text>
@@ -71,8 +73,15 @@ return(
             items={[
                 { label: 'Porsche', value: 'Porsche' },
                 { label: 'Lotus', value: 'Lotus' },
-                { label: 'Lexus', value: 'Lexus' }]}/>
-
+                { label: 'Lexus', value: 'Lexus' }]}
+            style={{
+                placeholder: {
+                    color: '#2c3fe6', // Another way to set the color
+                }
+            }}
+        />
+        </View>
+        <View style={styles.questionContainer}>
         <Text>Q2) What car is this?</Text>
         <Image source={require('./img/Renault.jpg')} style={styles.image} />
         <Text>Answer:</Text>
@@ -81,8 +90,16 @@ return(
             items={[
                 { label: 'Renault', value: 'Renault' },
                 { label: 'Hyundai', value: 'Hyundai' },
-                { label: 'Bmw', value: 'Bmw' }]}/>
+                { label: 'Bmw', value: 'Bmw' }]}
+            style={{
+                placeholder: {
+                    color: '#2c3fe6', // Another way to set the color
+                }
+            }}
+        />
+        </View>
 
+        <View style={styles.questionContainer}>
         <Text>Q3) What car is this?</Text>
         <Image source={require('./img/Citoren.jpg')} style={styles.image} />
         <Text>Answer:</Text>
@@ -91,8 +108,16 @@ return(
             items={[
                 { label: 'Citoren', value: 'Citoren' },
                 { label: 'Lotus', value: 'Lotus' },
-                { label: 'Toyota', value: 'Toyota' }]}/>
+                { label: 'Toyota', value: 'Toyota' }]}
+            style={{
+                placeholder: {
+                    color: '#2c3fe6', // Another way to set the color
+                }
+            }}
+        />
+        </View>
 
+        <View style={styles.questionContainer}>
         <Text>Q4) What car is this?</Text>
         <Image source={require('./img/Bmw.jpg')} style={styles.image} />
         <Text>Answer:</Text>
@@ -101,8 +126,16 @@ return(
             items={[
                 { label: 'Porsche', value: 'Porsche' },
                 { label: 'Lotus', value: 'Lotus' },
-                { label: 'Bmw', value: 'Bmw' }]}/>
+                { label: 'Bmw', value: 'Bmw' }]}
+            style={{
+                placeholder: {
+                    color: '#2c3fe6', // Another way to set the color
+                }
+            }}
+        />
+        </View>
 
+        <View style={styles.questionContainer}>
         <Text>Q5) What car is this?</Text>
         <Image source={require('./img/Ferrari.jpg')} style={styles.image} />
         <Text>Answer:</Text>
@@ -111,10 +144,18 @@ return(
             items={[
                 { label: 'Porsche', value: 'Porsche' },
                 { label: 'Lamborghini', value: 'Lamborghini' },
-                { label: 'Ferrari', value: 'Ferrari' } ]}/>
+                { label: 'Ferrari', value: 'Ferrari' } ]}
+            style={{
+                placeholder: {
+                    color: '#2c3fe6', // Another way to set the color
+                }
+            }}
+        />
+        </View>
 
         <Text></Text>
         <Button title="Submit" onPress={handleSubmit} />
+        <Text></Text>
         <Text></Text>
     </ScrollView>
 );
@@ -126,10 +167,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#c0c8f6',
         borderRadius: 10,
         padding: 20,
-        marginBottom: 20,
-        shadowColor: '#000',
-        shadowOpacity: 0.1,
-        shadowRadius: 10,
+
         shadowOffset: { width: 0, height: 5 },
 
     },
@@ -146,16 +184,38 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor:'#a1a8ef',
+        borderRadius: 20,
+        alignSelf: 'center',
+        padding: 10,
+
+
     },
     icon: {
-        color: '#6373f1',
+        color: '#5769f4',
     },
     image: {
         width: '100%',
         height: 300,
         marginVertical: 10,
         alignSelf: 'center',
+        borderColor:'#a1a8ef',
+        borderRadius:20
+
+
     },
+    questionContainer: {
+        marginVertical: 15,
+        padding:15,
+        backgroundColor:'#a1a8ef',
+        borderRadius: 20,
+    },
+    // UserNameContainer:{
+    //     backgroundColor: '#a1a8ef',
+    //     borderRadius: 20,
+    //     padding: 10,
+    //
+    // }
 });
 
 
